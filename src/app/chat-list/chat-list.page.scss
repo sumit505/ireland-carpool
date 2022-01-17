@@ -1,0 +1,38 @@
+@import 'src/global.scss';
+
+.chat-list-wrapper {
+    .list-wrapper {
+        margin: 10px 0;
+    }
+    .img-view {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%; 
+        background-color: #dedbdb;
+        text-align: center;
+        line-height: 50px;
+        margin: 0 15px 0 0;
+    }
+
+    .details {
+        h4 {
+            margin: 0 0 5px;
+            font-size: 18px;
+        }
+        h5 {
+            margin: 0;
+            font-size: 12px;
+        }
+    }
+   .time-stamp {
+       text-align: center;
+       ion-icon {
+           font-size: 18px;
+           color: green;
+       }
+       span {
+            font-size: 12px;
+            display: block;
+       }
+   }
+}

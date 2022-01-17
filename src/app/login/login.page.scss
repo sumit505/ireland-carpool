@@ -1,0 +1,53 @@
+@import 'src/global.scss';
+
+.logo-section {
+    // width: 315px;
+    // height: 165px;
+    // margin: 0 auto 50px;
+    // background: url('/assets/carpool-sprite.png') no-repeat -406px -243px;
+    zoom: 0.7;
+    text-align: center;
+}
+
+.login-form, .register-form {
+    ion-list {
+        padding: 15px;
+    }
+    .item-input, .item-select {
+        margin-bottom: 20px;
+    }
+    .label-floating {
+        color: $color-secondary;
+    }
+    .item-has-value, .item-has-focus {
+        --highlight-background : $color-secondary;
+        .label-floating {
+            color: $color-secondary;
+        }
+    }
+    .item-has-value.ion-invalid {
+        --highlight-background :#eb445a ;
+    }
+    .select-icon {
+        color: $color-secondary;
+        opacity: 1;
+    }
+    .item-select {
+        &:hover { background: transparent; }
+        ::ng-deep {
+            ion-label { color: $color-secondary !important; }
+        }
+    }
+}
+
+.form-info {
+    text-align: center;
+    span {
+        color: $color-secondary;
+        font-weight: 700;
+    }
+}
+
+.button-holder {
+    margin: 20px 0 0;
+}

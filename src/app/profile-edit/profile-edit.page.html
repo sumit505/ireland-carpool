@@ -1,0 +1,56 @@
+<ion-header class="profile-edit-header">
+  <ion-toolbar class="header-no-background">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile-edit-wrapper page-background">
+  <div class="profile-image-wrapper">
+    <div class="background-filter-blur" [ngStyle]="{'background-image': 'url('+fileName+')'}"></div>
+    <img [src]="fileName" alt="" *ngIf="userData && userData.profilePhoto != '' ">
+    <ion-icon *ngIf="userData && userData.profilePhoto == '' " class="profile-icon" name="person"></ion-icon>
+    <ion-icon name="pencil" class="edit-icon" (click)="uploadNewFile();"></ion-icon>
+  </div>
+  <div class="profile-details">
+      <form [formGroup]="profileForm">
+          <ion-list>
+              <ion-item>
+                <ion-label  position="floating">Fullname *</ion-label>
+                <ion-input type="text" name="Fullname" formControlName="fullname"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label  position="floating">Mobile *</ion-label>
+                <ion-input type="tel" name="registerNumber" formControlName="mobileNo" maxlength="10" minlength="8"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label  position="floating">Emergency Contact No *</ion-label>
+                <ion-input type="tel" name="emergencyMobileNo" formControlName="emergencyMobileNo"  minlength="8"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label  position="floating">Email *</ion-label>
+                <ion-input type="email" name="emailId" formControlName="emailId"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label>Gender *</ion-label>
+                <ion-select placeholder="Select One" formControlName="gender">
+                  <ion-select-option value="f">Female</ion-select-option>
+                  <ion-select-option value="m">Male</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <ion-item>
+                <ion-label>I am *</ion-label>
+                <ion-select placeholder="Select One" formControlName="myRole">
+                  <ion-select-option value="car">Car</ion-select-option>
+                  <ion-select-option value="biker">Biker</ion-select-option>
+                  <ion-select-option value="rider">Rider</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+            <div class="text-center button-holder">
+                <button class="btn-carpool-primary btn btn-full " (click)="updateProfile(profileForm);">Update Profile</button>
+            </div>
+      </form>
+  </div>
+</ion-content>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar class="header-background">
+    <ion-title>Verify Account</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="wrapper">  
+    <ion-item>
+      <ion-label>Select your document</ion-label>
+      <ion-select placeholder="Select One" [(ngModel)]="document">
+        <ion-select-option value="ppsn">PPSN Card</ion-select-option>
+        <ion-select-option value="passport">Passport</ion-select-option>
+        <ion-select-option value="companyId">Company Id</ion-select-option>
+        <ion-select-option value="permit">Residence Permit</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <div class="upload-document" *ngIf="document && document != '' ">
+      <div class="button-wrapper">
+          <input type="file" accept="image/jpeg, image/png" (change)="loadFile($event)">
+          <button class="btn btn-carpool-secondary">Browse File</button>
+      </div>
+      <div class="view-file">
+        <img src="{{fileName}}" alt="">
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,53 @@
+@import 'src/global.scss';
+
+.profile-card-wrapper {
+    padding: 10px 5px;
+    overflow: auto;
+    background-color: $color-secondary;
+    color: $color-white;
+    .profile-pic {
+        width: 25%;
+        float: left;
+    }
+    .img-holder {
+        width: 65px;
+        height: 65px;
+        border: 1px solid $color-white;
+        border-radius: 100%;
+        margin: 0 auto;
+        text-align: center;
+        overflow: hidden;
+        .profile-icon {
+            height: 100%;
+            color: $color-white;
+            font-size: 3rem;
+        }
+    }
+    .profile-detail {
+        width: 75%;
+        padding: 0 0 0 10px;
+        float: left;
+        position: relative;
+        h3,h4 {
+            margin: 0;
+            color: $color-white;
+        }
+        h4 {
+            font-size: 16px;
+        }
+        .edit-icon {
+            position: absolute;
+            right: 10px;
+            top: 0;
+            color: $color-white;
+            font-size: 20px;
+        }
+    }
+}
+
+.other-list {
+  margin: 25px 10px 10px;
+  ion-icon {
+      color: $color-secondary;
+  }   
+}

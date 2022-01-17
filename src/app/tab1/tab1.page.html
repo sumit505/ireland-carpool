@@ -1,0 +1,93 @@
+<ion-header [translucent]="true">
+  <ion-toolbar class="header-background text-center">
+    <ion-title>
+      Ireland Carpool
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="map-container" class="map">
+    <div class="buttons-group">
+      <button class="btn btn-carpool-primary">Emergency Panic</button>
+      <button class="btn btn-carpool-primary">Female to Female Ride</button>
+      <button class="btn btn-carpool-primary">+ New Ride</button>
+    </div>
+  </div>
+  <div class="riding-panel">
+    <div class="heading-list">
+      <div class="list" [ngClass]="rideType == 1 ? 'active': ''" (click)="selectRide(1);">
+        <ion-icon slot="start" name="man"></ion-icon>
+        <span>Rider</span>
+      </div>
+      <div class="list" [ngClass]="rideType == 2 ? 'active': ''" (click)="selectRide(2);">
+          <ion-icon slot="start" name="bicycle"></ion-icon>
+          <span>Biker</span>
+        </div>
+        <div class="list" [ngClass]="rideType == 3 ? 'active': ''" (click)="selectRide(3);">
+          <ion-icon slot="start" name="car"></ion-icon>
+          <span>Car Owner</span>
+      </div>
+    </div>
+
+    <!-- start and end -->
+    <div class="start-end-panel">
+      <div class="start">
+        <span class="icon"></span>
+        <span class="sub-head">Start</span>
+        <span class="start-point">Dublin, Ireland</span>
+      </div>
+      <div class="end">
+        <span class="icon"></span>
+        <span class="sub-head">End</span>
+        <span class="end-point">Unit 3, East Point Business Park, Dublin 3, Ireland</span>
+      </div>
+    </div>
+    <!-- start and end -->
+
+    <div class="datetime-seat-panel">
+      <div class="heading-list">
+        <div class="list">
+          <div class="input-wrapper">
+              <label for="calendar"><ion-icon name="calendar"></ion-icon>  {{bookingDate}}</label>
+              <input type="date" id="calendar" name="trip-start" [(ngModel)]="bookingDate" min="{{minDate}}">
+          </div>
+        </div>
+        <div class="list">
+          <div class="input-wrapper">
+            <label for="timeSelect"><ion-icon name="time"></ion-icon> {{bookingTime}}</label>
+            <input type="time" id="timeSelect" [(ngModel)]="bookingTime" min="{{minTime}}">
+          </div>
+        </div>
+        <div class="list">
+          <div class="count">
+            <div class="remove" (click)="removeSeat();">
+                <ion-icon name="remove-circle"></ion-icon>
+            </div>
+            <div class="input-view">
+                {{seatValue}} Seat
+            </div>
+            <div class="add" (click)="addSeat();">
+                <ion-icon name="add-circle"></ion-icon>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rider-type-label">
+      <div class="label-view" *ngIf="rideType == 1">
+          <span>Find a ride</span>
+          <ion-icon slot="end" name="man"></ion-icon>
+      </div>
+      <div class="label-view" *ngIf="rideType == 2">
+          <span>Find rides for bike pooling</span>
+          <ion-icon slot="end" name="bicycle"></ion-icon>
+      </div>
+      <div class="label-view" *ngIf="rideType == 3">
+          <span>Find rides for car pooling</span>
+          <ion-icon slot="end" name="car"></ion-icon>
+      </div>
+    </div>
+  </div>
+</ion-content>

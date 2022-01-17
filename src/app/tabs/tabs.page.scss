@@ -1,0 +1,12 @@
+@import 'src/global.scss';
+
+
+ion-tab-bar {
+    ion-tab-button {
+        &.tab-selected {
+            ion-icon, ion-label {
+                color: $color-secondary;
+            }
+        }
+    }
+}

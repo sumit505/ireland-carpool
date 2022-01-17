@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar class="header-background text-center">
+    <ion-title>Transactions</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="tabs-heading">
+    <div class="list" (click)="viewTab(1);" [ngClass]="tabView == 1 ? 'active': '' ">
+      <span>Add Balance</span>
+    </div>
+    <div class="list" (click)="viewTab(2);" [ngClass]="tabView == 2 ? 'active': '' ">
+      <span>Withdraw balance</span>
+    </div>
+  </div>
+
+  <div class="tabs-view account" *ngIf="tabView == 1">
+    <section class="payment clearfix">
+        <div class="input-wrapper">
+            <span>Add Amount</span>
+            <input type="text" [(ngModel)]="addBalance">
+            <ion-icon name="logo-euro" slot="end"></ion-icon>
+        </div>
+        <div class="button-view">
+            <button class="btn btn-carpool-secondary">Add Payment</button>
+        </div>
+           <!-- <div class="float-right">
+        <div class="currency">
+          
+        </div>
+      </div> -->
+     <!-- <div class="float-left">
+       <div class="amount-details">
+         <span class="block">0.0</span>
+         <span class="block">Total Amount</span>
+       </div>
+     </div>
+     <div class="float-right">
+       <button class="btn btn-carpool-secondary">Initiate Payment</button>
+     </div> -->
+    </section>
+  </div>
+  <div class="tabs-view history" *ngIf="tabView == 2">
+      <div class="withdraw">
+          <div class="input-wrapper">
+              <span>Withdraw Amount</span>
+              <input type="text" [(ngModel)]="addBalance">
+              <ion-icon name="logo-euro" slot="end"></ion-icon>
+          </div>
+          <div class="button-view">
+              <button class="btn btn-carpool-secondary">Withdraw</button>
+          </div>
+      </div>
+  </div>
+</ion-content>

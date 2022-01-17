@@ -1,0 +1,83 @@
+@import 'src/global.scss';
+
+.profile-edit-header {
+    &::after {
+        display: none;
+    }
+}
+
+.profile-edit-wrapper {
+    min-height: 100vh;
+    top: -56px;
+}
+
+.profile-image-wrapper {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    .background-filter-blur {
+        height: 100%;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(4px) grayscale(1);
+    }
+    img {
+        width: auto;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .profile-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 5rem;
+    }
+    .edit-icon {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        font-size: 1.5rem;
+    }
+}
+
+
+.button-holder {
+    padding: 15px;
+}
+
+.profile-details {
+    ion-list {
+        padding: 15px;
+    }
+    .item-input, .item-select {
+        margin-bottom: 20px;
+    }
+    .label-floating {
+        color: $color-secondary;
+    }
+    .item-has-value, .item-has-focus {
+        --highlight-background : $color-secondary;
+        .label-floating {
+            color: $color-secondary;
+        }
+    }
+    .item-has-value.ion-invalid {
+        --highlight-background :#eb445a ;
+    }
+    .select-icon {
+        color: $color-secondary;
+        opacity: 1;
+    }
+    .item-select {
+        &:hover { background: transparent; }
+        ::ng-deep {
+            ion-label { color: $color-secondary !important; }
+        }
+    }
+}

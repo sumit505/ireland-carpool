@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar class="header-background">
+    <ion-title>Chat</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="chat-list-wrapper">
+    <ion-item *ngFor="let list of chatList;">
+      <div class="clearfix list-wrapper">
+        <div class="img-view float-left">
+            {{list.initalName}}
+          </div>
+          <div class="details float-left">
+            <h4>{{list.fullName}}</h4>
+            <h5>{{list.lastMsg}}</h5>
+          </div>
+      </div>
+      <ion-label class="time-stamp" slot="end">
+        <ion-icon name="call"></ion-icon>
+        <span>{{list.timeStamp}}</span>
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>

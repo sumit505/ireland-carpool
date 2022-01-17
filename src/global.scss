@@ -1,0 +1,155 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import url(https://use.fontawesome.com/releases/v5.7.2/css/all.css); 
+// @import url(https://fonts.googleapis.com/css?family=Lato); 
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans); 
+// @import "../font-awesome.css"; 
+
+body {
+    // font-family: 'Lato', sans-serif;
+    font-family: 'Josefin Sans', sans-serif !important;
+    ion-app.md {
+        // font-family: 'Lato', sans-serif;
+        font-family: 'Josefin Sans', sans-serif !important;
+    }
+}
+
+* {
+    font-family: 'Josefin Sans', sans-serif !important; 
+}
+
+/*colors*/
+$color-primary: #ef3f39;
+// $color-secondary: #000080;
+$color-secondary: #30405a;
+$color-black: #000;
+$color-white: #fff;
+$color-darkgrey: gray;
+/*colors end*/
+
+// #5a450d brown wala
+
+/*classes*/
+
+.btn-carpool-primary {
+    padding: 12px 40px 10px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: $color-primary;
+    box-shadow: 0 6px 12px #9d9d9d;
+    color: $color-white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    &:hover:not(.disable-hover) {
+        background-color: $color-primary;
+        color: $color-white;
+    }
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+
+.btn-carpool-secondary {
+    padding: 12px 40px 10px;
+    height: 40px;
+    border-radius: 6px;
+    background-color: $color-secondary;
+    box-shadow: 0 6px 12px #9d9d9d;
+    color: $color-white;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    &:hover:not(.disable-hover) {
+        background-color: $color-secondary;
+        color: $color-white;
+    }
+    &:disabled {
+        opacity: 0.5;
+    }
+}
+
+.btn-round {
+    border-radius: 25px;
+}
+.btn-full {
+    width: 100%;
+}
+.btn-half-width {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.header-background {
+    --background: #ef3f39;
+    color: $color-white;
+    font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.header-no-background {
+    --background: transparent;
+}
+
+.page-background {
+    --background: #f7f7f7;
+}
+
+.clearfix {
+    overflow: auto;
+}
+
+.float-left { float: left; }
+
+.float-right { float: right; }
+
+
+// alert
+ion-alert {
+    .alert-head {
+        background-color: $color-primary;
+    }
+    .alert-title {
+        color: $color-white !important;
+    }
+    .alert-radio-label, .alert-button {
+        color: $color-secondary !important;
+    }
+    .alert-radio-icon {
+        border-color: $color-primary !important;
+    }
+    .alert-radio-inner {
+        background-color: $color-primary !important;
+    }
+    
+}
+// alert end
+

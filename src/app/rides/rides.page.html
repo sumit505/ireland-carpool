@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar class="header-background">
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Rides</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="tabs-heading">
+      <div class="list" (click)="viewTab(1);" [ngClass]="tabView == 1 ? 'active': '' ">
+        <span>Upcoming</span>
+      </div>
+      <div class="list" (click)="viewTab(2);" [ngClass]="tabView == 2 ? 'active': '' ">
+        <span>Repeat Ride</span>
+      </div>
+      <div class="list" (click)="viewTab(3);" [ngClass]="tabView == 3 ? 'active': '' ">
+        <span>Completed</span>
+      </div>
+    </div>
+    <div class="tabs-view upcoming" *ngIf="tabView == 1">
+      <section class="no-rides">
+        <h3>Whoops!</h3>
+        <span>No ride posted by you</span>
+        <div class="no-ride-img"></div>
+      </section>
+    </div>
+    <div class="tabs-view repeat-ride"  *ngIf="tabView == 2">
+      <section class="no-rides">
+          <h3>Whoops!</h3>
+          <span>No ride posted by you</span>
+          <div class="no-ride-img"></div>
+        </section>
+    </div>
+    <div class="tabs-view completed"  *ngIf="tabView == 3">
+      <section class="no-rides">
+          <h3>Whoops!</h3>
+          <span>No ride posted by you</span>
+          <div class="no-ride-img"></div>
+        </section>
+    </div>
+</ion-content>
